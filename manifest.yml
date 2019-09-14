@@ -1,0 +1,14 @@
+---
+applications:
+  - name: reactive-mongodb-demo
+    instances: 1
+    disk_quota: 192M
+    memory: 768M
+    path: build/libs/reactive-mongodb-demo-0.0.1-SNAPSHOT.jar
+    buildpacks:
+      - java_buildpack
+    random-route: true
+    services:
+      - mongodb
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
